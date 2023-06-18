@@ -23,7 +23,7 @@ public class GameManagerX : MonoBehaviour
     private float spaceBetweenSquares = 2.5f; 
     private float minValueX = -3.75f; //  x value of the center of the left-most square
     private float minValueY = -3.75f; //  y value of the center of the bottom-most square
-    
+
     public void StartGame(int difficulty)
     {
         spawnRate /= difficulty;
@@ -31,16 +31,16 @@ public class GameManagerX : MonoBehaviour
         StartCoroutine(SpawnTarget());
         StartCoroutine(TimeUpdate());
         score = 0;
-        time = 0;
+        time = 69;
         UpdateScore(0);
         titleScreen.SetActive(false);
     }
     
     IEnumerator TimeUpdate()
     {
-        while (isGameActive)
+        while (isGameActive == true)
         {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(1.0f);
             UpdateTime();
 
         }
@@ -51,7 +51,7 @@ public class GameManagerX : MonoBehaviour
         while (isGameActive)
         {
             yield return new WaitForSeconds(spawnRate);
-            int index = Random.Range(0, 5);
+            int index = Random.Range(0, 4);
 
             if (isGameActive)
             {
@@ -62,10 +62,10 @@ public class GameManagerX : MonoBehaviour
     }
     
     Vector3 RandomSpawnPosition()
-    {
+    { 
         float spawnPosX = minValueX + (RandomSquareIndex() * spaceBetweenSquares);
         float spawnPosY = minValueY + (RandomSquareIndex() * spaceBetweenSquares);
-
+        
         Vector3 spawnPosition = new Vector3(spawnPosX, spawnPosY, 0);
         return spawnPosition;
 
@@ -85,8 +85,10 @@ public class GameManagerX : MonoBehaviour
     public void UpdateTime()
     {
         time -= 1;
-        if(time == 0)
+        timeText.text = "Time: " + time;
+        if(time == 0 || score < 0)
         {
+            
             GameOver();
         }
     }

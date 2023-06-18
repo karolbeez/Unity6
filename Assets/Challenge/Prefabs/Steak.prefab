@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 5626452297012352016}
   - component: {fileID: 5626452297011324546}
   - component: {fileID: 3985378201660076449}
+  - component: {fileID: 2461596660859236987}
+  - component: {fileID: -3651408146859407733}
   m_Layer: 0
   m_Name: Steak
   m_TagString: Untagged
@@ -98,3 +100,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointValue: 15
   explosionFx: {fileID: 8328426341284958323, guid: 066dd222b602e49afbe0f2b9c3c96ddb, type: 3}
+  delay: 2
+--- !u!65 &2461596660859236987
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5626452297013284046}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4673994, y: 0.08559386, z: 0.66151136}
+  m_Center: {x: 0, y: 0.04279685, z: 0.0000000102035616}
+--- !u!114 &-3651408146859407733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5626452297013284046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6da289543d5e4a58ae451e7528046a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
